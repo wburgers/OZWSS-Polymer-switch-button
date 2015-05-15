@@ -4,12 +4,7 @@
 
 <dom-module id="OZWSS-Polymer-switch-button">
 	<template>
-	<style>
-		#switchbutton {
-			color: {{color}};
-		}
-	</style>
-	<paper-icon-button icon="settings-power" id="switchbutton"></paper-icon-button>
+		<paper-icon-button icon="settings-power" id="switchbutton"></paper-icon-button>
 	</template>
 </dom-module>
 
@@ -21,28 +16,27 @@
 				type: Boolean,
 				observer: "_switchAtHome",
 			},
-			colorChange: function () {
+			changeColor: function () {
 				if(this.atHome === true) {
-					this._color = "red";
+					this.$.switchbutton.style.color = "red";
 				}
 				else if(this.atHome === false) {
-					this._color = "green";
+					this.$.switchbutton.style.color = "green";
 				}
 				else {
-					this._color = "grey";
+					this.$.switchbutton.style.color = "grey";
 				}
 			},
 		},
-		_color: "grey",
-		_switchAtHome: function (oldValue,newValue) {
+		_switchAtHome: function (newValue,oldValue) {
 			if(newValue === true) {
-				this.color = "green";
+				this.$.switchbutton.style.color = "green";
 			}
 			else if(newValue === false) {
-				this.color = "red";
+				this.$.switchbutton.style.color = "red";
 			}
 			else {
-				this.color = "grey";
+				this.$.switchbutton.style.color = "grey";
 			}
 		},
 	});
