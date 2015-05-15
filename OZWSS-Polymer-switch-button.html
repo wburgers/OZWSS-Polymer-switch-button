@@ -16,17 +16,17 @@
 				type: Boolean,
 				observer: "_switchAtHome",
 			},
-			changeColor: function () {
-				if(this.atHome === true) {
-					this.$.switchbutton.style.color = "red";
-				}
-				else if(this.atHome === false) {
-					this.$.switchbutton.style.color = "green";
-				}
-				else {
-					this.$.switchbutton.style.color = "grey";
-				}
-			},
+		},
+		changeColor: function () {
+			if(this.atHome === true) {
+				this.$.switchbutton.style.color = "red";
+			}
+			else if(this.atHome === false) {
+				this.$.switchbutton.style.color = "green";
+			}
+			else {
+				this.$.switchbutton.style.color = "grey";
+			}
 		},
 		_switchAtHome: function (newValue,oldValue) {
 			if(newValue === true) {

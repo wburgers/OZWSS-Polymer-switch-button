@@ -9,6 +9,11 @@
 		<script>
 			var switchbutton = document.getElementById('switchbutton');
 			switchbutton.atHome = true;
+			
+			switchbutton.addEventListener('tap', function() {
+				switchbutton.changeColor();
+				switchbutton.atHome = !switchbutton.atHome;
+			});
 		</script>
 	</body>
 </html>
