@@ -1,0 +1,49 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+
+<dom-module id="OZWSS-Polymer-switch-button">
+	<template>
+	<style>
+		#switchbutton {
+			color: {{color}};
+		}
+	</style>
+	<paper-icon-button icon="settings-power" id="switchbutton"></paper-icon-button>
+	</template>
+</dom-module>
+
+<script>
+	Polymer({
+		is: "OZWSS-Polymer-switch-button",
+		properties: {
+			atHome: {
+				type: Boolean,
+				observer: "_switchAtHome",
+			},
+			colorChange: function () {
+				if(this.atHome === true) {
+					this._color = "red";
+				}
+				else if(this.atHome === false) {
+					this._color = "green";
+				}
+				else {
+					this._color = "grey";
+				}
+			},
+		},
+		_color: "grey",
+		_switchAtHome: function (oldValue,newValue) {
+			if(newValue === true) {
+				this.color = "green";
+			}
+			else if(newValue === false) {
+				this.color = "red";
+			}
+			else {
+				this.color = "grey";
+			}
+		},
+	});
+</script>
