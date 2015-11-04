@@ -14,7 +14,7 @@
     "bower_components"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#~1.1.0",
+    "polymer": "Polymer/polymer#^1.1.0",
     "paper-icon-button": "PolymerElements/paper-icon-button#~1.0.0"
   },
   "devDependencies": {
